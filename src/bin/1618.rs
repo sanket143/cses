@@ -28,6 +28,8 @@ fn main() {
     let n = scan.next::<num>();
     let mut ans = 0;
     let mut temp = 0;
+    let mut pow = 1;
+    let mut idx = 0;
 
     for i in (5..n + 1).step_by(5) {
         let mut n = i;
@@ -38,19 +40,33 @@ fn main() {
             ans += 1;
         }
 
+        if i == 5_u128.pow(pow) {
+            write!(out, "\n").ok();
+            pow += 1;
+            idx = 1;
+        }
+
         write!(out, "[{i}] {temp}:{} ", ans).ok();
 
-        let b = n / 5;
-        write!(out, "{}:{}", i / 5 + (i / 5), i / 5).ok();
+        write!(out, "{}:{} {}", idx, i.ilog(5), i / 5).ok();
 
         write!(out, "\n").ok();
+        idx += 1;
     }
 }
 
 /*
+missing numbers
 
 5
-25 = 5 + 5
-125 = 25 + 5
-225
+11
+17
+23
+
+29
+30
+36
+42
+48
+54
 */
