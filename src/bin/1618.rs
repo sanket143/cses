@@ -32,12 +32,7 @@ fn main() {
     let mut ans = n / 5;
 
     while d_power > 1 {
-        ans += 5_u128.pow(d_power - 2);
-
-        if d_power > 1 {
-            ans += (n - 5_u128.pow(power)) / 5_u128.pow(d_power);
-        }
-
+        ans += 5_u128.pow(d_power - 2) + (n - 5_u128.pow(power)) / 5_u128.pow(d_power);
         d_power -= 1;
     }
 
