@@ -28,9 +28,22 @@ a = 1 2
 b = 1 3
 c = 2 3
 
+a = A
+b = c
+c = b
+
 2 = abc
 3 = abc a CBA c abc
 4 = (abc a CBA c abc) a (CBA C abc A CBA) c (abc a CBA c abc)
+
+2 = abc
+3 = baC b Acb
+4 = abc b ACb a cbA c bac
+5 = baC b Acb a CBA C baC b (Acb c aBc A bca b cAb)
+
+2 = 3
+3 = 7
+4 = 15
 
 2 = abc
 3 = 2 a -2 c 2
